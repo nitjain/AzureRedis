@@ -16,6 +16,7 @@ namespace AzureRedis
         private static Lazy<ConnectionMultiplexer> lazyConnection = new Lazy<ConnectionMultiplexer>(() =>
 
             {
+                //commented the code to pick the connection from JSON file as this is giving some error     
                 //string cacheConnection = _config["CacheConnection"];
                 string cacheConnection = "ReportHubRedisInstance.redis.cache.windows.net:6380,password=6DGfDR5uaTiJCYowyEvWaW3ETM0sqopvTS8qSvMh44Q=,ssl=True,abortConnect=False";
                 return ConnectionMultiplexer.Connect(cacheConnection);
